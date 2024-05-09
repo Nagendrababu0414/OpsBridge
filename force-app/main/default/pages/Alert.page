@@ -1,0 +1,11 @@
+<apex:page >
+    <script>
+        function displayAlert() {
+            alert('This is an alert from Apex!');
+        }
+    </script>
+    
+    <apex:form >
+        <apex:commandButton value="Display Alert" onclick="displayAlert(); return false;"/>
+    </apex:form>
+</apex:page>

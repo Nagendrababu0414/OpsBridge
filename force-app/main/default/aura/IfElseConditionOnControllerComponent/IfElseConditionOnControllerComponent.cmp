@@ -1,0 +1,8 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name ="message1" type="string"/>
+    <aura:attribute name ="message2" type ="string"/>
+     click: {!v.message1}
+    click  again : {!v.message2}
+
+    <lightning:button variant="success" label ="Success" onclick= "{!c.myAction}"/>
+   </aura:component>

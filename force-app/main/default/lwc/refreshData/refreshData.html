@@ -1,0 +1,49 @@
+<template>
+    <lightning-card title="Refresh Data">
+        <h1>
+            <span class="slds-badge"><b> Total Records: {totalRecords}</b></span>
+        </h1><br/>
+        <p>{msg}</p>
+        <div style="height:300px">
+            <template if:true={loadedData}>
+                <lightning-datatable key-field="Id" data={loadedData} columns={columns}>
+                </lightning-datatable>
+            </template>
+        </div>
+        <div style="height:50px; ">
+            <table>
+                <tr>
+                    <td>
+                        <div>
+                            <label  for="recordsPerPage">PageSize :</label>&nbsp;
+                                <select style="background:rgb(122, 231, 244); color :red" id="recordsPerPage" 
+                                onchange={handleRecordsPerPage}>
+                                    <template for:each={pageSizeOptions} for:item="option">
+                                        <option key={option} value={option}>{option}</option>
+                                    </template>
+                                </select>
+                       
+                        </div>
+                    </td>
+                    <td>
+                        <lightning-button disabled={bDisableFirst} icon-name="utility:jump_to_left" label="First"
+                            alternative-text="first page"
+                            onclick={firstPage}></lightning-button>
+                        <lightning-button disabled={bDisableFirst} icon-name="utility:chevronleft" label="Previous"
+                            alternative-text="Previous" onclick={previousPage}></lightning-button>
+                        &nbsp;
+                        <span >Showing {pageNumber} &nbsp;of&nbsp; {totalPages}
+                            &nbsp;&nbsp;Page(s)</span>
+                        &nbsp;
+                        <lightning-button disabled={bDisableLast} icon-name="utility:chevronright" label="Next"
+                            alternative-text="Next" onclick={nextPage}
+                            icon-position="right"></lightning-button>
+                        <lightning-button disabled={bDisableLast} icon-name="utility:jump_to_right" label="Last"
+                            alternative-text="last page" onclick={lastPage} icon-position="right"></lightning-button>
+                        <!-- <lightning-button label="Refresh" onclick={handleRefresh}></lightning-button>-->
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </lightning-card>
+</template>

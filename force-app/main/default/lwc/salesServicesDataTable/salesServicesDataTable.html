@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Combined Sales and Services Data" icon-name="standard:service_appointment">
+        <lightning-layout>
+            <lightning-layout-item>
+    <lightning-dual-listbox style="width: 350px; margin-right: 20px;height:normal"
+    name="Sales Category"
+    label="Category"
+    source-label="Available Options"
+    selected-label="Selected Options"
+    options={selectedPickOptions}
+    value={selectedCategories}
+    onchange={handleCategoryChange}
+></lightning-dual-listbox></lightning-layout-item>
+<lightning-layout-item style="padding:around-medium; margin:20px">
+    <lightning-input label="Start Date" type="Date" value={startDate} onchange={handleDateChange}>
+        </lightning-input></lightning-layout-item></lightning-layout><br/>
+        <lightning-button label="Submit" variant="brand" onclick={handleButtonClick}></lightning-button><br/>
+        
+        <lightning-datatable
+            key-field="Id"
+            data={formattedData}
+            columns={columns}>
+        </lightning-datatable>
+    
+    </lightning-card>
+</template>

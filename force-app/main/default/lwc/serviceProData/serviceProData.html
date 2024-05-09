@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Service pro data">
+    <lightning-input label="Service Name" value={Name} onchange={handleNameChange}></lightning-input>
+    <lightning-input label="Service Amount" value={Amount} onchange={handleAmountChange}></lightning-input>
+    <lightning-button label="Submit" variant="brand" onclick={handleClick}></lightning-button>
+    <lightning-datatable
+    key-field="Id"
+    data={serviceData}
+    columns={columns}>
+    ></lightning-datatable>
+    </lightning-card>
+</template>

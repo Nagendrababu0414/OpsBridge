@@ -1,0 +1,40 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+      <aura:handler name="init" value="{!this}" action="{!c.display}" />    
+    <aura:attribute name="indStartVal" type="String"/>     
+    <aura:attribute name="accountList" type="List"/>     
+    <aura:attribute name="msg" type="String"/>     
+    <aura:attribute name="status" type="Boolean"/>  
+    <lightning:card title="Account Records" iconName="standard:budget">            
+        <div class="slds-p-left_medium">                 
+            <lightning:input style="width:15rem" name="input1" label="Enter a value" value="{!v.indStartVal}" /><br/><br/>
+            <lightning:button variant="brand" label="Submit" onclick="{!c.display}" /><br/><br/>
+        </div>        
+        <aura:if isTrue="{!v.status}">   
+            <div class="slds-p-left_medium">              
+                <table border="1" bgcolor="lightyellow" width="100%">     
+                    <tr>                        
+                        <th>Account Name</th>      
+                        <th>BillingCity</th>      
+                        <th>PhoneNO</th>           
+                        <th>Industry</th>      
+                        <th>Rating</th>       
+                    </tr>                 
+                    <aura:iteration items="{!v.accountList}" var="acc">   
+                        <tr>                          
+                            <td>{!acc.Name}</td>      
+                            <td>{!acc.BillingCity}</td>   
+                            <td>{!acc.Phone}</td>        
+                            <td>{!acc.Industry}</td>     
+                            <td>{!acc.Rating}</td>       
+                        </tr>                 
+                    </aura:iteration>       
+                </table>         
+            </div>       
+            <aura:set attribute="else">             
+                <div class="slds-p-left_medium">    
+                    <h1 style="color:red;font-size:25px">{!v.msg}</h1>     
+                </div>            
+            </aura:set>         
+        </aura:if>    
+    </lightning:card> 
+            </aura:component>

@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<div style='background-color:#839192'>
+    <lightning:card title='Account Records'>
+        
+    </lightning:card>
+    </div>
+</aura:component>

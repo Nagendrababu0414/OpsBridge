@@ -1,0 +1,50 @@
+<template>
+<lightning-card title="Search By Item Number">
+<div></div>
+<lightning-layout style = 'width:100%'>
+<lightning-layout-item style = 'width:25%'>
+<div>
+<b>Account Name</b>
+<lightning-input placeholder = 'Account Name' type = 'text'  value ={itemName} onchange={handleItemNumber}></lightning-input>
+</div></lightning-layout-item> &nbsp; &nbsp;&nbsp;&nbsp;
+<lightning-layout-item style = 'width:25%'>
+<div>
+<b>Search Phone</b>
+<lightning-input placeholder = 'Enter Phone Number' type = 'text'  value ={itemNumber} onchange={handlerBarcode}></lightning-input>
+</div></lightning-layout-item>&nbsp; &nbsp;&nbsp;&nbsp; 
+<lightning-layout-item style = 'width:25%'>
+<div> 
+<b>Search Industry</b>
+<lightning-input placeholder = 'Enter Industry' type = 'text'  value ={itemNumber} onchange={handlerCaseUPC}></lightning-input>
+</div>
+</lightning-layout-item> &nbsp; &nbsp;&nbsp;&nbsp;
+
+<!--<lightning-layout-item style = 'width:25%'>
+<div>
+<b>Item UPC</b>
+<lightning-input placeholder = 'Enter Item UPC' type = 'text'  value ={itemNumber} onchange={handleItemUPC}></lightning-input>
+</div> </lightning-layout-item> &nbsp; &nbsp;&nbsp;&nbsp;-->
+        
+</lightning-layout></div></br></br>
+<div style = 'text-align:center'>
+<lightning-button label="Submit" onclick={handleClick} variant="brand"></lightning-button>&nbsp; &nbsp; &nbsp;
+<lightning-button label="Load Data" onclick={handleClick1} ></lightning-button>&nbsp; &nbsp; &nbsp;
+<lightning-button label="Export to Excel" onclick={handleClick2}></lightning-button></div>
+<template lwc:if = {temp}>
+<table>
+<tbody>
+    <template for:each={accItems} for:item="account">
+        <tr key={account.Id}>
+            <td>{account.Name}</td>
+            <td>{account.Website}</td>
+            <td>{account.Rating}</td>
+            <td>{account.Phone}</td>
+            <td>{account.Industry}</td>
+        </tr>
+    </template>
+</tbody>
+</table>
+</template>
+
+</lightning-card>  
+</template>

@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Account Rating Picklist Values">
+        <div class="slds-m-around_medium">
+            <template for:each={picklistValues} for:item="value">
+                <p key={value}>{value}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

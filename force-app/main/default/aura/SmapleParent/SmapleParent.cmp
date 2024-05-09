@@ -1,0 +1,8 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name ="desc" type ="string"/>
+    <lightning:card>
+    <c:SmapleChild/>
+    <lightning:button variant="success" label ="anythig click" onclick ="{!c.myAction}"/><br/><br/>
+    about you : {!v.desc}
+    </lightning:card>
+</aura:component>

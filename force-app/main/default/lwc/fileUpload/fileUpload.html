@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="File Upload">
+        <lightning-input label="File Name" value={fileName} onchange={handleFileNameChange}></lightning-input>
+        <lightning-file-upload
+            label="Upload File"
+            name="fileUploader"
+            accept={acceptedFormats}
+            record-id={recordId}
+            onuploadfinished={handleUploadFinished}>
+        </lightning-file-upload>
+    </lightning-card>
+</template>

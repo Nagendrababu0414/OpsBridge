@@ -1,0 +1,39 @@
+<!--
+  @description       : 
+  @author            : Sudha Sardhis
+  @group             : 
+  @last modified on  : 08-10-2023
+  @last modified by  : Sudha Sardhis
+-->
+<template>
+    <lightning-card>
+        <lightning-input type = "date" label="DATE OF JOINING"></lightning-input>
+
+        <lightning-input type = "Text" label="COMPANY"></lightning-input>
+        <lightning-input type = "Text" label="DEPARTMENT"></lightning-input>
+
+<!-- to place inputs side by side -->
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <lightning-input type = "Text" label ="FIRST"></lightning-input>
+            </lightning-layout-item> 
+            <lightning-layout-item padding="around-small">
+                <lightning-input type = "Text" label ="MIDDLE"></lightning-input>
+            </lightning-layout-item>  
+            <lightning-layout-item padding="around-small">
+                <lightning-input type = "Text" label ="LAST"></lightning-input>
+            </lightning-layout-item>       
+        </lightning-layout>
+<!-- to place inputs side by side -->
+
+        <lightning-input type = "text" label="TITLE"></lightning-input>
+        <lightning-input type = "Phone" label="PHONE"></lightning-input>
+        <lightning-input  type = "Text" label="FAX"></lightning-input>
+        <lightning-input type = "email" label="EMAIL"></lightning-input>
+        <lightning-input type = "Text" label="NOTES"></lightning-input>
+       <!-- {phone}
+        {date}-->
+
+    </lightning-card>
+    
+</template>
