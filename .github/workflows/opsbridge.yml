@@ -1,0 +1,32 @@
+name: Push to OpsBridge_NagDev
+
+on:
+  push:
+    branches:
+      - main  # Adjust the branch name as needed
+
+jobs:
+  push_to_opsbridge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main repository
+        uses: actions/checkout@v2
+        
+      # Here you can add steps to modify files, build your project, etc.
+      # For example, you might run tests, build artifacts, or generate documentation.
+      
+      # For demonstration purposes, let's say we're just updating a file.
+      - name: Update a file
+        run: echo "Updated content" > updated_file.txt
+      
+      # After making changes, clone OpsBridge_NagDev repository and push changes to it.
+      - name: Clone OpsBridge_NagDev repository
+        run: |
+          git clone https://github.com/yourusername/OpsBridge_NagDev.git opsbridge_nagdev
+          cd opsbridge_nagdev
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          cp -r ../. ../opsbridge_nagdev
+          git add .
+          git commit -m "Update file via GitHub Actions"
+          git push
