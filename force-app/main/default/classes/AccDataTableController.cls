@@ -2,8 +2,8 @@ public with sharing class AccDataTableController {
      @AuraEnabled(cacheable=true)
      public static List<account> accData() {
          try {
-            return [SELECT id, name FROM Account LIMIT 10];  
-
+            return [SELECT id, name FROM Account where name!='' LIMIT 10];  
+// test for git
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }
