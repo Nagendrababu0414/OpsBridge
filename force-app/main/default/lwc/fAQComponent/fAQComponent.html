@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="FAQs">
+        <template for:each={faqs} for:item="faq">
+            <div key={faq.Id} data-faq-id={faq.Id} onclick={handleClick}>
+                <p>{faq.Question__c}</p>
+                <template if:true={faq.isExpanded}>
+                    <p>{faq.Answer__c}</p>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+</template>

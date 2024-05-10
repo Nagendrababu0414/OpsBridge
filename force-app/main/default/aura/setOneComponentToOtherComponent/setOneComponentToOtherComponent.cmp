@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name ='str1' type = 'string'/>
+    <aura:attribute name = 'str2' type ='string'/>
+    <aura:registerEvent name ='regName' type ='c.setComponentToOtherComponentEvent'/>
+    <lightning:card title ='FirstComponent' iconName='standard:asset_object'>
+    <div >
+    <lightning:input label ='First Name   :' value ='{!v.str1}' type ='text' style ='width:15rem'/>
+    <lightning:input label ='Last Name    : ' value ='{!v.str2}' type ='text' style ='width:15rem'/>
+        <br/><br/>
+    <lightning:button label ='Full Name' variant ='brand' onclick ='{!c.name}'/>
+    </div>
+    </lightning:card>
+</aura:component>

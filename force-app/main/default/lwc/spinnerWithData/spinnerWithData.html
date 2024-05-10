@@ -1,0 +1,12 @@
+<template>
+<lightning-card title = 'Account Spinner with data table'>
+    <lightning-button label ='Click me' onclick={handleclick} variant="brand"></lightning-button>
+    <template if:true={spinnerLoad}>
+    <lightning-spinner alternative-text="spinnerLoad"></lightning-spinner></template>
+    <template for:each={accList1} for:item="acc">
+        <lightning-card key = {acc.id}> 
+            <div>{acc.id}</div>
+        </lightning-card>
+    </template>
+</lightning-card>
+</template>

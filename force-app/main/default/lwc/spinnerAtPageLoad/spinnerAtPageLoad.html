@@ -1,0 +1,12 @@
+<template>
+<lightning-card title = 'Spinner @Pageload'>
+<template if:true={spinnerLoad}>
+        <lightning-spinner alternative-text="spinnerLoad"></lightning-spinner>
+    </template>
+        <template for:each={data} for:item="acc">
+            <lightning-card  key ={acc.Id}>
+                <div>{acc.LastName}</div>
+            </lightning-card>
+        </template>
+</lightning-card>
+</template>

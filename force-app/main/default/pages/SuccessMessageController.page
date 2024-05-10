@@ -1,0 +1,23 @@
+<apex:page controller="SuccessMessageController">
+    <script>
+        function displaySuccessMessage() {
+            // Call the Apex controller method to set the success message
+            Visualforce.remoting.Manager.invokeAction(
+                {!$RemoteAction.SuccessMessageController.setSuccessMessage},
+                function(result, event) {
+                    if (event.status) {
+                        // Display success message using JavaScript alert
+                        alert(result);
+                    } else {
+                        // Handle error if necessary
+                        console.error(event.message);
+                    }
+                }
+            );
+        }
+    </script>
+    
+    <apex:form >
+        <apex:commandButton value="Click Me" onclick="displaySuccessMessage(); return false;"/>
+    </apex:form>
+</apex:page>

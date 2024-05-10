@@ -1,0 +1,14 @@
+<apex:page controller="ObjectListController" showHeader="true" sidebar="true">
+    <apex:form id="form">
+        <apex:pageBlock title="Object List">
+            <apex:pageBlockTable value="{!objectNames}" var="objectName">
+                <apex:column value="{!objectName}" />
+            </apex:pageBlockTable>
+            <apex:panelGrid columns="3" style="margin-top: 10px;">
+                <apex:outputText value="Page {!pageNumber} of {!(totalRecords + pageSize - 1) / pageSize}" />
+                <apex:commandLink action="{!next}">NEXT</apex:commandLink>
+                <apex:commandLink action="{!previous}">PREVIOUS</apex:commandLink>
+            </apex:panelGrid>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

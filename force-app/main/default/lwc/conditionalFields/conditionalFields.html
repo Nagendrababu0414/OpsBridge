@@ -1,0 +1,11 @@
+<!-- conditionalFields.html -->
+<template>
+    <lightning-card title="Conditional Fields">
+        <lightning-input type="checkbox" label="Show Fields" checked={isChecked} onchange={handleCheckboxChange}></lightning-input>
+
+        <template if:true={isChecked}>
+            <lightning-input label="Name" value={name}></lightning-input>
+            <lightning-input label="Age" value={age}></lightning-input>
+        </template>
+    </lightning-card>
+</template>

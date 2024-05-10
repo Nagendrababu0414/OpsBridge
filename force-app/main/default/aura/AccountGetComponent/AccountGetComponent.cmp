@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    <aura:attribute name ="acList" type ="List"/>
+    <aura:handler name ="init" value ="{!this}" action ="{!c.doInit}"/>
+    <lightning:select name="select" label="Select an account">
+        <option >None</option>
+        <aura:iteration items = "{!v.acList}" var ="it">
+            <option>{!it.Name}</option>
+        </aura:iteration>
+    </lightning:select>
+</aura:component>

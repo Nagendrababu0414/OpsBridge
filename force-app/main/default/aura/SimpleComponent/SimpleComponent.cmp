@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name = "SimpleComp" type ="string"/>
+    <aura:attribute name = "StringArray" type = "string[]" default="['Nagendra','Sudha','Anwin','Rishi','Kaswika']"/>
+    <aura:attribute name= "MapDemo" type  ="Map" default ="{a:'value1', b:'value2', c:'value3'}"/>
+    <aura:handler name ="init" value ="{!this}" action ="{!c.doInit}"/>
+    <b>Is Nagendra naughty?: {!v.SimpleComp}</b>
+    <h1> First Index Value : {!v.StringArray[4]}</h1>
+    <p> Map Value :{!v.MapDemo.b}</p>
+</aura:component>

@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Pending PIWIS">
+        <lightning-button label="Approve US" variant="brand" onclick={handleApprove} > </lightning-button> &nbsp; &nbsp;
+        <lightning-button label="Reject US" variant="destructive-text" onclick={handleReject} > </lightning-button>
+
+        <div class="slds-m-around_medium">
+            <template if:true={piwis}>
+            <lightning-datatable
+                key-field="ID"
+                data={piwis}
+                columns={columns}
+                onrowselection={handleRowSelection}
+                selected-rows={selectedRows}
+            >
+            </lightning-datatable>
+            </template>
+            <template if:false={piwis}>
+                No pending user stories found.
+            </template><br/>    
+        </div>
+    </lightning-card>
+</template>

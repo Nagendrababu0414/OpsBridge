@@ -1,0 +1,23 @@
+<aura:component controller = "ContactDropDownController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name ="result" type ="list"/>
+    <aura:attribute name ="slt" type ="string"/>
+<aura:attribute name ="result1" type ="list"/>
+    <aura:handler name ="init" value ="{!this}" action ="{!c.myAction}"/>
+    <lightning:select name ="ContactRecords" label="Select any Contact"  >
+        <option> None </option>
+        <aura:iteration items ="{!v.result}" var="conta">
+            <option onclick ="{!c.anyAction}" value="{!v.slt}" >{!conta.LastName}</option>
+        </aura:iteration>
+        
+    </lightning:select>
+    <aura:iteration items ="{!v.result1}" var="co">
+           <table>
+        	<tr>
+               	<td>{!co.LastName}</td>
+                <td>{!co.Email}</td>
+                <td>{!co.Phone}</td>
+               </tr>
+        </table>
+        </aura:iteration>
+    
+</aura:component>

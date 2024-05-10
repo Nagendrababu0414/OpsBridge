@@ -1,0 +1,23 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    <aura:attribute name ="msg" type = "string"/>
+    
+<lightning:card>
+    <center>
+    <Div style = "  box-shadow:10px 10px 5px lightblue;;color:white;height:100px; background-color: #94FAD7; border:2px solid red ;margin-top:20% ;border-radius:12px ; font-size:20px ; text-style:verdana;width:50%">
+       <center><p class="st">{!v.msg}</p></center>
+    </Div></center>
+    <br/>
+    
+    <center>
+        <lightning:button aura:id = "b1" label ="Rushikesh" variant ="brand" onclick="{!c.saveButton}"/>
+        <lightning:button aura:id = "b2" label ="Nagendra" variant ="brand" onclick="{!c.saveButton}"/>
+        <lightning:button aura:id = "b3" label ="Pooja" variant ="brand" onclick="{!c.saveButton}"/>
+        <lightning:button aura:id = "b4" label ="santosh" variant ="brand" onclick="{!c.saveButton}"/>
+        <lightning:button aura:id = "b5" label ="MUTHU" variant ="brand" onclick="{!c.saveButton}"/> 
+        <lightning:button aura:id = "b6" label ="Murali" variant ="brand" onclick="{!c.saveButton}"/>
+        <lightning:button aura:id = "b7" label ="Teja" variant ="brand" onclick="{!c.saveButton}"/>
+        <lightning:button aura:id = "b8" label ="Thanos" variant ="brand" onclick="{!c.saveButton}"/>
+    </center>
+    </lightning:card>
+</aura:component>

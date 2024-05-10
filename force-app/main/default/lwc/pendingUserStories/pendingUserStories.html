@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Pending User Stories">
+        <div style = "float : right">
+            
+        <lightning-button variant="success" label="Approve" title="Submit for approval" 
+                           onclick={handleApprove}></lightning-button> &nbsp; &nbsp; 
+        <lightning-button variant="destructive" label="Reject" title="Submit for Rejected" 
+                           onclick={handleReject}></lightning-button>
+        
+    </div><br/><br/>
+        <!-- <template if:true={userStories}>
+            <lightning-datatable
+            key-field="Id"
+            data={userStories}
+            columns={columns}
+            onrowselection={handleRowSelection}>-->
+            <template if:true={userStories}>
+                <lightning-datatable
+                key-field="Id"
+                data={userStories}
+                columns={columns}
+                
+                selected-rows={selectedRows}>
+        </lightning-datatable>
+        </template>
+        <template if:false={userStories}>
+            No pending user stories found.
+        </template><br/>
+    </lightning-card>
+</template>

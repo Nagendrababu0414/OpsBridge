@@ -1,0 +1,70 @@
+<apex:page >
+<center><apex:image value="{!$Resource.Formimage}" width="20%" height="10%"/></center>
+<apex:form >
+<apex:pageblock tabstyle="account" >
+<apex:pageblockSection />
+<h1>User form</h1>
+<table style="background-color:lightpink !important"  border ="0" align ="center">
+<tr><td>Username</td>
+<td>
+<apex:inputtext /> 
+</td>
+</tr>
+<tr><td>Password</td>
+<td>
+<apex:inputsecret /> 
+</td>
+</tr>
+<tr><td>Resume</td>
+<td>
+<apex:inputFile value="" /> 
+</td>
+</tr>
+<tr><td>Skills</td>
+<td>
+Salesforce <apex:inputcheckbox /> <span style="color:blue">Java</span> <apex:inputcheckbox /> HTML <apex:inputcheckbox />
+</td>
+</tr>
+<tr><td>Gender</td>
+<td>
+<apex:selectRadio />Male
+</td>
+<td>
+<apex:selectRadio />Female
+</td>
+</tr>
+<tr><td>Country</td>
+<td>
+<apex:selectList multiselect="false" size="1" >
+<apex:selectOption itemLabel="India" itemValue="ind"></apex:selectOption>
+<apex:selectOption itemLabel="US" itemValue="US"></apex:selectOption>
+<apex:selectOption itemLabel="Australia" itemValue="Aus"></apex:selectOption>
+<apex:selectOption itemLabel="Europe" itemValue="EU"></apex:selectOption>
+<apex:selectOption itemLabel="UK" itemValue="UK"></apex:selectOption>
+</apex:selectList>
+</td>
+</tr>
+<tr><td>Language</td>
+<td>
+<apex:selectList >
+<apex:selectOption itemLabel="English" itemValue="ind"></apex:selectOption>
+<apex:selectOption itemLabel="Telugu" itemValue="US"></apex:selectOption>
+<apex:selectOption itemLabel="Hindi" itemValue="Aus"></apex:selectOption>
+<apex:selectOption itemLabel="French" itemValue="EU"></apex:selectOption>
+<apex:selectOption itemLabel="Japanise" itemValue="UK"></apex:selectOption>
+</apex:selectList>
+</td>
+</tr>
+<tr>
+<td>
+<apex:commandButton value="Save"/>
+
+<apex:commandLink value="QuickSave"/>
+
+<apex:commandButton value="Cancel"/>
+</td>
+</tr>
+</table>
+</apex:pageblock>
+</apex:form>
+</apex:page>

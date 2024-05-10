@@ -1,0 +1,26 @@
+<aura:component controller="SpoonacularCalloutClass" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="firstnum" type= "Integer"/>
+    <aura:attribute name='resp' type= "Map"/>
+    <aura:attribute name="spoonacularList" type="list"/>
+    <Lightning:card title="Spoonacular Items" >
+        <lightning:input type="Number" label="Please give Number" value="{!v.firstnum}" />
+        <lightning:button variant="Brand-outline" label="Click To show Items" onclick="{!c.showData}"/>
+    	<table>
+        	<tr>
+                <th>Id</th>
+            	<th>Name</th>
+                <th>Img</th>
+            </tr>
+            <aura:iteration items="{!v.spoonacularList}" var = "ra">
+            	<tr>
+                	<td>{!ra.id}</td>
+                	<td>{!ra.measures}</td>
+                    <td><img src="{!ra.image}"/></td>
+                </tr>
+            
+            
+            </aura:iteration>
+        
+        </table>
+    </Lightning:card>
+</aura:component>
